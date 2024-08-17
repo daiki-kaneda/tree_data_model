@@ -1,5 +1,6 @@
 library tree_data_model;
 
+import 'package:flutter/rendering.dart';
 import 'package:uuid/uuid.dart';
 
 abstract class Tree<T, U> {
@@ -18,6 +19,7 @@ abstract class Tree<T, U> {
   }
 
   Map<String, dynamic> toJson(Map<String,dynamic> Function(T) toJsonT, Map<String,dynamic> Function(U) toJsonU);
+
 }
 
 final class Leaf<T, U> extends Tree<T, U> {
