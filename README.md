@@ -11,29 +11,54 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+<!-- TODO: Put a short description of the package here that helps potential users
+know whether this package might be useful for them. -->
+A model representing tree structure
 
 ## Features
+- recursively defined
+- JSON serializable
+- infinitely extensible
+- crud leaf
+- crud node
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+<!-- TODO: List what your package can do. Maybe include images, gifs, or videos. -->
 
-## Getting started
+<!-- ## Getting started
 
 TODO: List prerequisites and provide or point to information on how to
-start using the package.
+start using the package. -->
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+<!-- TODO: Include short and useful examples for package users. Add longer examples
+to `/example` folder. -->
 
 ```dart
-const like = 'sample';
+typedef TodoList = Tree<Todo, Header>;
+typedef Task = Leaf<Todo, Header>;
+typedef Folder = Node<Todo, Header>;
+
+final TodoList todos =
+    Folder(id: 'todos', value: Header(title: 'Todays todo'), subTrees: [
+  Folder(
+    id: 'exercise',
+    value: Header(
+      title: 'Exercise',
+      description: 'For brain Helthy',
+    ),
+    subTrees: [
+      Task(id: 'running_task', value: Todo(title: 'Running', completed: false)),
+      Task(id: 'squat_task', value: Todo(title: 'Squat', completed: false)),
+    ],
+  ),
+  Task(
+      id: 'study_math_task', value: Todo(title: 'Study math', completed: false))
+]);
 ```
 
-## Additional information
+<!-- ## Additional information
 
 TODO: Tell users more about the package: where to find more information, how to
 contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+from the package authors, and more. -->
