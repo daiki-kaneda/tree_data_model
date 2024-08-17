@@ -1,7 +1,7 @@
 name: tree_data_model
 description: "tree data structure"
 version: 0.0.1
-homepage:
+repository: https://github.com/daiki-kaneda/tree_data_model
 
 
 environment:
