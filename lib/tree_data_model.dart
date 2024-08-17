@@ -1,6 +1,5 @@
 library tree_data_model;
 
-import 'package:flutter/rendering.dart';
 import 'package:uuid/uuid.dart';
 
 abstract class Tree<T, U> {
