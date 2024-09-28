@@ -30,6 +30,15 @@ final class Leaf<T, U> extends Tree<T, U> {
   late final String id;
   final T value;
 
+  Leaf<T, U> copyWith({
+    T? value,
+  }) {
+    return Leaf<T, U>(
+      id: id,
+      value: value ?? this.value,
+    );
+  }
+
   factory Leaf.fromJson(Map<String, dynamic> json,
       T Function(Object?) fromJsonT, U Function(Object?) fromJsonU) {
     return Leaf(
