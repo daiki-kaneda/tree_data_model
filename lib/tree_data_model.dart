@@ -2,7 +2,7 @@ library tree_data_model;
 
 import 'package:uuid/uuid.dart';
 
-abstract class Tree<T, U> {
+sealed class Tree<T, U> {
   const Tree();
 
   factory Tree.fromJson(Map<String, dynamic> json,
